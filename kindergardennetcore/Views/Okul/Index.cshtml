@@ -1,0 +1,46 @@
+﻿@model IEnumerable<kindergardennetcore.Models.Okul>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Ana Sayfa</h1>
+
+<p>
+    <a asp-action="Create">Yeni Ekleme</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.OgrenciSayisi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OgretmenSayisi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SubeSayisi)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.OgrenciSayisi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OgretmenSayisi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SubeSayisi)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.OkulNo">Düzenle</a> |
+                <a asp-action="Delete" asp-route-id="@item.OkulNo">Sil</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

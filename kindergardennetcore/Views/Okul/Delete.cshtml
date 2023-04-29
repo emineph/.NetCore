@@ -1,0 +1,39 @@
+﻿@model kindergardennetcore.Models.Okul
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Sil</h1>
+
+<h3>Silmek istediğinize emin misiniz?</h3>
+<div>
+    <h4>Okul</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.OgrenciSayisi)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.OgrenciSayisi)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.OgretmenSayisi)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.OgretmenSayisi)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SubeSayisi)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SubeSayisi)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="OkulNo" />
+        <input type="submit" value="Sil" class="btn btn-danger" /> |
+        <a asp-action="Index">Listeye Geri Dön</a>
+    </form>
+</div>

@@ -1,0 +1,49 @@
+﻿@model kindergardennetcore.Models.Ogretmen
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Düzenle</h1>
+
+<h4>Ogretmen</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Düzenle">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="OgretmenNo" />
+            <div class="form-group">
+                <label asp-for="OgretmenAdi" class="control-label"></label>
+                <input asp-for="OgretmenAdi" class="form-control" />
+                <span asp-validation-for="OgretmenAdi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OgretmenSinifi" class="control-label"></label>
+                <input asp-for="OgretmenSinifi" class="form-control" />
+                <span asp-validation-for="OgretmenSinifi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OgretmenYasi" class="control-label"></label>
+                <input asp-for="OgretmenYasi" class="form-control" />
+                <span asp-validation-for="OgretmenYasi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OgretmenMaas" class="control-label"></label>
+                <input asp-for="OgretmenMaas" class="form-control" />
+                <span asp-validation-for="OgretmenMaas" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Kaydet" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Listeye Geri Dön</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

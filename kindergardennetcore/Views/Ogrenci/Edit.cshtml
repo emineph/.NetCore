@@ -1,0 +1,44 @@
+﻿@model kindergardennetcore.Models.Ogrenci
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Düzenle</h1>
+
+<h4>Ogrenci</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Düzenle">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="OgrenciNo" />
+            <div class="form-group">
+                <label asp-for="OgrenciAd" class="control-label"></label>
+                <input asp-for="OgrenciAd" class="form-control" />
+                <span asp-validation-for="OgrenciAd" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OgrenciYas" class="control-label"></label>
+                <input asp-for="OgrenciYas" class="form-control" />
+                <span asp-validation-for="OgrenciYas" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OgrenciSinif" class="control-label"></label>
+                <input asp-for="OgrenciSinif" class="form-control" />
+                <span asp-validation-for="OgrenciSinif" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Kaydet" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Listeye Geri Dön</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
